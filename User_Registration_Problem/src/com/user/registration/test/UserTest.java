@@ -66,4 +66,26 @@ public class UserTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Phone number test
+	@Test
+	public void givenPhoneNumber_WhenProper_ShouldReturnTrue() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePhoneNumber("+919308678787");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenNotGivenCountryCode_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePhoneNumber("012393086");
+		Assert.assertEquals(false, result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenSpacesBetweenNumber_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePhoneNumber("+9193084 76567");
+		Assert.assertEquals(false, result);
+	}
+
 }
