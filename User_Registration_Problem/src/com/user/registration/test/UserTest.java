@@ -102,4 +102,19 @@ public class UserTest {
 		boolean result = userValidator.validatePasswordMinEightChar("Pass");
 		Assert.assertEquals(false, result);
 	}
+
+	// Password test Rule 2: At least 1 Upper case
+	@Test
+	public void givenPassword_WhenProperWithOneUpperCase_ShouldReturnTrue() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordAtleastOneUpperCase("Password");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPassword_WhenNotWithOneUpperCase_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordAtleastOneUpperCase("pass");
+		Assert.assertEquals(false, result);
+	}
 }

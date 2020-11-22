@@ -47,4 +47,12 @@ public class User {
 		Pattern pattern = Pattern.compile(expression);
 		return pattern.matcher(password).matches();
 	}
+
+	// method validate password Rule 2 At least one upper case
+	public boolean validatePasswordAtleastOneUpperCase(String password) {
+		String expression = "^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)$";
+
+		Pattern pattern = Pattern.compile(expression);
+		return pattern.matcher(password).matches();
+	}
 }
