@@ -51,4 +51,19 @@ public class UserTest {
 		Assert.assertEquals(false, result);
 	}
 
+	// Email Address test
+	@Test
+	public void givenEmailName_WhenValid_ShouldReturnTrue() {
+		User userValidator = new User();
+		boolean result = userValidator.validateEmailAdress("shubh@gmail.com");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenEmailName_WhenNotValid_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validateEmailAdress("Shuh@.gmail.com");
+		Assert.assertEquals(false, result);
+	}
+
 }
