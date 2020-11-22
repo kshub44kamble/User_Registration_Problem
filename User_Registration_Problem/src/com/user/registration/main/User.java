@@ -39,4 +39,12 @@ public class User {
 		Pattern pattern = Pattern.compile(expression);
 		return pattern.matcher(number).matches();
 	}
+
+	// method validate password Rule 1 minimum 8 character
+	public boolean validatePasswordMinEightChar(String password) {
+		String expression = "[a-zA-Z]{8,}$";
+
+		Pattern pattern = Pattern.compile(expression);
+		return pattern.matcher(password).matches();
+	}
 }
