@@ -133,7 +133,7 @@ public class UserTest {
 		Assert.assertEquals(false, result);
 	}
 
-	// Password test Rule 3: At least 1 numeric number in the password
+	// Password test Rule 4: Has exactly one special character
 	@Test
 	public void givenPassword_WhenProperHasExactlyOneSpecialCharacter_ShouldReturnTrue() {
 		User userValidator = new User();
