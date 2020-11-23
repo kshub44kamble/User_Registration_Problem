@@ -132,4 +132,19 @@ public class UserTest {
 		boolean result = userValidator.validatePasswordAtleastOneNumericNumber("word");
 		Assert.assertEquals(false, result);
 	}
+
+	// Password test Rule 3: At least 1 numeric number in the password
+	@Test
+	public void givenPassword_WhenProperHasExactlyOneSpecialCharacter_ShouldReturnTrue() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordHasExactlyOneSpecialCharacter("Pass4w@rd8");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPassword_WhenNotHasExactlyOneSpecialCharacter_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordHasExactlyOneSpecialCharacter("word8pass");
+		Assert.assertEquals(false, result);
+	}
 }

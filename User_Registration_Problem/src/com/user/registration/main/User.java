@@ -64,4 +64,12 @@ public class User {
 		Pattern pattern = Pattern.compile(expression);
 		return pattern.matcher(password).matches();
 	}
+
+	// method validate password Rule 4 Has exactly 1 special character
+	public boolean validatePasswordHasExactlyOneSpecialCharacter(String password) {
+		String expression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[0-9a-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$";
+
+		Pattern pattern = Pattern.compile(expression);
+		return pattern.matcher(password).matches();
+	}
 }
