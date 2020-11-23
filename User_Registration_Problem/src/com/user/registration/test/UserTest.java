@@ -117,4 +117,19 @@ public class UserTest {
 		boolean result = userValidator.validatePasswordAtleastOneUpperCase("pass");
 		Assert.assertEquals(false, result);
 	}
+
+	// Password test Rule 3: At least 1 numeric number in the password
+	@Test
+	public void givenPassword_WhenProperWithAtleastOneNumericNumber_ShouldReturnTrue() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordAtleastOneNumericNumber("Pass4word8");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPassword_WhenNotrWithAtleastOneNumericNumber_ShouldReturnFalse() {
+		User userValidator = new User();
+		boolean result = userValidator.validatePasswordAtleastOneNumericNumber("word");
+		Assert.assertEquals(false, result);
+	}
 }

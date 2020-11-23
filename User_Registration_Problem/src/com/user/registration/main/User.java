@@ -55,4 +55,13 @@ public class User {
 		Pattern pattern = Pattern.compile(expression);
 		return pattern.matcher(password).matches();
 	}
+
+	// method validate password Rule 3 Should have at least 1 numeric number in the
+	// password
+	public boolean validatePasswordAtleastOneNumericNumber(String password) {
+		String expression = "^([A-Za-z0-9]*[0-9]+[A-Za-z0-9]*[A-Z])|([A-Za-z0-9]*[A-Z]+[A-Za-z0-9]*[0-9])$";
+
+		Pattern pattern = Pattern.compile(expression);
+		return pattern.matcher(password).matches();
+	}
 }
